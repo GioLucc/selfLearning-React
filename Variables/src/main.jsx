@@ -6,6 +6,6 @@ import * as variablesFile from './variables'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <variablesFile.Variables />
+    <variablesFile.Variables/>
   </React.StrictMode>,
 )
