@@ -1,5 +1,6 @@
 import React from 'react'
 // import { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
 const string = 'Normal string'
 const number = 21
@@ -13,12 +14,16 @@ const anObject = {name: 'Giovanni', age: 21}
 const everything = [string, number,numberTwo,array,boolean,todayDate,anObject,Greet(),Addition()]
 
 //rafc
-export const Variables = () => {
+// () can receive props
+export const Variables = ({title,subtitle,version}) => {
   return (
     // could find a Fragment
     // Fragment
     <>
-        <h1>Variables</h1>
+        <h1>{title}</h1>
+        <h2>{subtitle}</h2>
+        <h3>{version}</h3>
+        <br/>
         <h4>Variable tipo String: </h4>  <p>{string}</p> 
         <h4>Variable tipo Number: </h4>  <p>{number}</p> 
         <h4>Variable tipo Array: </h4>  <p>{array}</p> 
@@ -29,4 +34,10 @@ export const Variables = () => {
 
     </>
   )
+}
+
+Variables.PropTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  version: PropTypes.number.isRequired
 }
