@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   // Hook que funciona con el setCount
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(10) // Use state maneja el valor del count
 
   return (
     <>
