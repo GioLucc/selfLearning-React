@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 //nombre func arrow
 // components on pascal case
@@ -16,13 +16,17 @@
 // }
 
 export const CounterApp = ({ value }) => {
+
+    //hook const, variable, modifier,       prop
+    const [counter, setCounter] = useState(value);
+
+
     function handleClick() {
-        value += 1
-        console.log(value)
+        setCounter(counter + 1);
     }
     return (
         <>
-            <h1> Counter: {value} </h1>
+            <h1> Counter: {counter} </h1>
             <button onClick={handleClick}>
                 Suma uno
             </button>
