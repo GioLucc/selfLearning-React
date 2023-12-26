@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { AddTask } from './components/AddTask'
+import { AddTask } from './AddTask'
 
 const Items = ({ content, seen }) => {
     return (
@@ -13,11 +13,11 @@ const Items = ({ content, seen }) => {
 }
 
 export const ListingApp = () => {
-    const addTasks = () =>
-    {
-        // Content is an array, adding a new content means using [with the format below]
-        setContent([...content, {content: 'New content', seen: false}])
-    }
+    // const addTasks = () =>
+    // {
+    //     // Content is an array, adding a new content means using [with the format below]
+    //     setContent([...content, {content: 'New content', seen: false}])
+    // }
     let contentList = [
         {content: "Components", seen: true},
         {content: "Variables", seen: true},
