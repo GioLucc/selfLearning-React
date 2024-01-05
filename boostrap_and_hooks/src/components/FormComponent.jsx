@@ -1,38 +1,29 @@
 import React from 'react'
-import { useState } from 'react'
+import { useForm } from '../hooks/useForm'
 
 export const FormComponent = () => {
 
-    const [formState, setFormState] = useState({
+    const initialForm = {
         userName: '',
         passWord: ''
-    })
-            // Also destructuring the content of useState
-    const { userName, passWord } = formState
-                        // destructure of event
-    const onInputChange = ({target}) => {
-        //given that every form has an onChange we will be with every action getting all the data of that input change
+    }
+    const {formState, userName,passWord,onInputChange} = useForm(initialForm)
 
-        // console.log(target.value)
-        // console.log(target.id)
+    // Also destructuring the content of formState of useForm
+    // const { userName, passWord } = formState
 
-        // destructuring what i want to write id is each box and the value is what is written on those
-        const{id,value} = target
-        setFormState({
-            ...formState, // persist all placeholders
-            [id] : value // key has to go with []
-        })
-
-
+    const onSubmit = (event) => {
+        event.preventDefault()
+        console.log(formState)
     }
 
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <h1>Welcome</h1>
             <div className="form-group">
                 <label htmlFor="userName">Username</label>
                 <input
-                    type="email"
+                    type="userName"
                     className="form-control"
                     id="userName"
                     aria-describedby="emailHelp"
