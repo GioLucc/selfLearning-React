@@ -16,9 +16,15 @@ export const useForm = (initialForm = {}) => {
         })
     }
 
+    const onSubmit = (event) => {
+        event.preventDefault()
+        console.log(formState)
+    }
+
     return {
         ...formState,
         onInputChange,
+        onSubmit,
         formState
     }
 }

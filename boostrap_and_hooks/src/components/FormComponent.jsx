@@ -7,15 +7,11 @@ export const FormComponent = () => {
         userName: '',
         passWord: ''
     }
-    const {formState, userName,passWord,onInputChange} = useForm(initialForm)
+    const {formState, userName,passWord,onInputChange, onSubmit} = useForm(initialForm)
 
     // Also destructuring the content of formState of useForm
     // const { userName, passWord } = formState
 
-    const onSubmit = (event) => {
-        event.preventDefault()
-        console.log(formState)
-    }
 
     return (
         <form onSubmit={onSubmit}>
